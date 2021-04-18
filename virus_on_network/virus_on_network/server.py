@@ -60,7 +60,7 @@ chart = ChartModule(
         {"Label": "Asian Infected", "Color": "#E34EC1"},
         {"Label": "White Infected", "Color": "#FF0000"},
         {"Label": "Black Infected", "Color": "#FFD77B"},
-        {"Label": "Hispanic Infected", "Color": "#40D2F9"},
+        {"Label": "Latino Infected", "Color": "#40D2F9"},
         {"Label": "Susceptible", "Color": "#008000"},
         {"Label": "Resistant", "Color": "#808080"},
     ]
@@ -106,14 +106,14 @@ model_params = {
         1,
         description="Choose how many black agents to be included in the model",
     ),
-    "number_hispanic": UserSettableParameter(
+    "number_latino": UserSettableParameter(
         "slider",
-        "Number of Hispanic Agents",
+        "Number of Latino Agents",
         10,
         10,
         100,
         1,
-        description="Choose how many hispanic agents to be included in the model",
+        description="Choose how many latino agents to be included in the model",
     ),
     "avg_node_degree": UserSettableParameter(
         "slider", "Avg Node Degree", 3, 3, 8, 1, description="Avg Node Degree"
@@ -123,7 +123,7 @@ model_params = {
         "Initial Outbreak Size",
         1,
         1,
-        10,
+        50,
         1,
         description="Initial Outbreak Size",
     ),
