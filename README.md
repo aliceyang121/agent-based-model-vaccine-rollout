@@ -56,6 +56,6 @@ From our model, we discovered that it takes approximately 200 days for the White
 From both our agent-based model and logistic regression model, it is apparent that the current vaccination policy can be improved on in order to ensure equitable distribution. 
 
 
-## What's next for 
+## What's next
 
 We want to expand our product to model more situations, and include more agent features besides race, such as age, gender, income, location, etc. We want to create a product that can be heavily customized because we understand that the optimal distribution strategy differs widely between states, counties, and even communities. Our product should be able to be used on a community level, so that each community can simulate for themselves the best way to distribute vaccines. Eventually, we want this product to be generalizable to distribution of all types of things, not just vaccines. 
