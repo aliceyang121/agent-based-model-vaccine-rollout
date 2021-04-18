@@ -184,8 +184,8 @@ class VirusAgent(Agent):
     #         self.state = State.RESISTANT
 
     def try_remove_infection(self):
-        vaccination_rates = {'asian':0.0567, 'white':0.129, 'black':0.0134, 'latino':0.097}
-
+        # Ratios of following: 'asian':0.0567, 'white':0.129, 'black':0.0134, 'latino':0.097
+        vaccination_rates = {'asian': 0.4, 'white': 0.8, 'black': 0.07, 'latino': .7}
         agent_vacc_rate = vaccination_rates[self.race]
         # Try to remove
         if self.random.random() < agent_vacc_rate:
@@ -216,6 +216,8 @@ class VirusAgent(Agent):
                     self.state = State.BLACK_INFECTED
                 elif self.race == 'latino':
                     self.state = State.LATINO_INFECTED
+
+            if self.state is not State.RESISTANT and self.state is not State.SUSCEPTIBLE:
                 self.try_remove_infection()
 
     def step(self):
