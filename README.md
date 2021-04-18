@@ -1,5 +1,3 @@
-# Hacktech 2021 Submission
-
 # Agent-based Model for Fair Distribution of COVID Vaccines 
 
 We present an agent-based model combined with machine learning to simulate how vaccine distribution strategies affect COVID infections in a community with populations of different races. 
