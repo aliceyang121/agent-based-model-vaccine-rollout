@@ -8,11 +8,11 @@ This model is for Hacktech 2021 Submission.
 
 You will need at least Python 3.7 installed. Make sure that you have the mesa, matplotlib, and jupyter libaries installed. The following commands might differ on your installation of python and pip:
 
-'''
+```
     $ pip install mesa
     $ pip install matplotlib
     $ pip install jupyter
-'''
+```
 
 To install the dependencies use pip and the requirements.txt in this directory. e.g.
 
