@@ -185,7 +185,8 @@ class VirusAgent(Agent):
 
     def try_remove_infection(self):
         # Ratios of following: 'asian':0.0567, 'white':0.129, 'black':0.0134, 'latino':0.097
-        vaccination_rates = {'asian': 0.4, 'white': 0.8, 'black': 0.07, 'latino': .7}
+        # vaccination_rates = {'asian': 0.4, 'white': 0.8, 'black': 0.07, 'latino': .7}
+        vaccination_rates = {'asian': 0.1, 'white': 0.226, 'black': 0.02, 'latino': .17}
         agent_vacc_rate = vaccination_rates[self.race]
         # Try to remove
         if self.random.random() < agent_vacc_rate:

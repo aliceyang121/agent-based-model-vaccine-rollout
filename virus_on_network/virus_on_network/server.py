@@ -123,7 +123,7 @@ model_params = {
         "Initial Outbreak Size",
         1,
         1,
-        50,
+        10,
         1,
         description="Initial Outbreak Size",
     ),
