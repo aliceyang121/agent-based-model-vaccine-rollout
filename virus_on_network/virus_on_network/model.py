@@ -15,7 +15,7 @@ class State(Enum):
     ASIAN_INFECTED = 3
     WHITE_INFECTED = 4
     BLACK_INFECTED = 5
-    HISPANIC_INFECTED = 6
+    LATINO_INFECTED = 6
 
 
 def number_state(model, state):
@@ -43,8 +43,8 @@ def white_infected(model):
 def black_infected(model):
     return number_state(model, State.BLACK_INFECTED)
 
-def hispanic_infected(model):
-    return number_state(model, State.HISPANIC_INFECTED)
+def latino_infected(model):
+    return number_state(model, State.LATINO_INFECTED)
 
 
 class VirusOnNetwork(Model):
@@ -55,7 +55,7 @@ class VirusOnNetwork(Model):
         number_asian = 10,
         number_white = 10,
         number_black = 10,
-        number_hispanic = 10,
+        number_latino = 10,
         # num_nodes=10,
         avg_node_degree=3,
         initial_outbreak_size=1,
@@ -69,8 +69,8 @@ class VirusOnNetwork(Model):
         self.number_asian = number_asian
         self.number_white = number_white
         self.number_black = number_black
-        self.number_hispanic = number_hispanic
-        num_nodes = number_asian + number_white + number_black + number_hispanic
+        self.number_latino = number_latino
+        num_nodes = number_asian + number_white + number_black + number_latino
         prob = avg_node_degree / num_nodes
         self.G = nx.erdos_renyi_graph(n=num_nodes, p=prob)
         self.grid = NetworkGrid(self.G)
@@ -91,13 +91,13 @@ class VirusOnNetwork(Model):
                 "Asian Infected": asian_infected,
                 "White Infected": white_infected,
                 "Black Infected": black_infected,
-                "Hispanic Infected": hispanic_infected,
+                "Latino Infected": latino_infected,
             }
         )
 
         # Create agents
-        races = ['asian', 'white', 'black', 'hispanic']
-        race_nmbrs = [self.number_asian, self.number_white, self.number_black, self.number_hispanic]
+        races = ['asian', 'white', 'black', 'latino']
+        race_nmbrs = [self.number_asian, self.number_white, self.number_black, self.number_latino]
         race_idx = 0
         count = 0
         for i, node in enumerate(self.G.nodes()):
@@ -184,7 +184,7 @@ class VirusAgent(Agent):
     #         self.state = State.RESISTANT
 
     def try_remove_infection(self):
-        vaccination_rates = {'asian':0.3, 'white':0.2, 'black':0.12, 'hispanic':0.12}
+        vaccination_rates = {'asian':0.0567, 'white':0.129, 'black':0.0134, 'latino':0.097}
 
         agent_vacc_rate = vaccination_rates[self.race]
         # Try to remove
@@ -201,8 +201,8 @@ class VirusAgent(Agent):
                 self.state = State.WHITE_INFECTED
             elif self.race == 'black':
                 self.state = State.BLACK_INFECTED
-            elif self.race == 'hispanic':
-                self.state = State.HISPANIC_INFECTED
+            elif self.race == 'latino':
+                self.state = State.LATINO_INFECTED
 
     def try_check_situation(self):
         if self.random.random() < self.virus_check_frequency:
@@ -214,11 +214,12 @@ class VirusAgent(Agent):
                     self.state = State.WHITE_INFECTED
                 elif self.race == 'black':
                     self.state = State.BLACK_INFECTED
-                elif self.race == 'hispanic':
-                    self.state = State.HISPANIC_INFECTED
+                elif self.race == 'latino':
+                    self.state = State.LATINO_INFECTED
                 self.try_remove_infection()
 
     def step(self):
-        if self.state is State.INFECTED:
+        # if self.state is State.INFECTED:
+        if self.state is not State.RESISTANT and self.state is not State.SUSCEPTIBLE:
             self.try_to_infect_neighbors()
         self.try_check_situation()
