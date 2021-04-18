@@ -1,14 +1,18 @@
-# Virus on a Network
+# Agent Based Model of Vaccine Rollout 
 
 ## Summary
 
-This model is based on the NetLogo model "Virus on Network".
-
-For more information about this model, read the NetLogo's web page: http://ccl.northwestern.edu/netlogo/models/VirusonaNetwork.
-
-JavaScript library used in this example to render the network: [d3.js](https://d3js.org/).
+This model is for Hacktech 2021 Submission. 
 
 ## Installation
+
+You will need at least Python 3.7 installed. Make sure that you have the mesa, matplotlib, and jupyter libaries installed. The following commands might differ on your installation of python and pip:
+
+'''
+    $ pip install mesa
+    $ pip install matplotlib
+    $ pip install jupyter
+'''
 
 To install the dependencies use pip and the requirements.txt in this directory. e.g.
 
@@ -18,7 +22,7 @@ To install the dependencies use pip and the requirements.txt in this directory. 
 
 ## How to Run
 
-To run the model interactively, run ``mesa runserver`` in this directory. e.g.
+To run the model interactively, go into the virus_on_network folder in this directory and run ``mesa runserver`` e.g.
 
 ```
     $ mesa runserver
