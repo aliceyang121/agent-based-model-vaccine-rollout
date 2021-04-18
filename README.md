@@ -51,7 +51,9 @@ We learned about vaccine rollout distribution strategies, trends, and how these 
 
 We also learned about agent-based models and statistical simulations. 
 
-From our model, we discovered that it takes approximately 200 days for the White population and Latino population to achieve 50% vaccination, 250 days for the Asian population to achieve 50% vaccination, and approximately 300 days for the Black population to achieve 50% vaccination. It is apparent that the current method for vaccine distribution is unfair. While cities with high white population may achieve herd immunity 
+From our model, we discovered that it takes approximately 200 days for the White population and Latino population to achieve 50% vaccination, 250 days for the Asian population to achieve 50% vaccination, and approximately 300 days for the Black population to achieve 50% vaccination. It is apparent that the current method for vaccine distribution is unfair. From this model, it can be inferred that geographical areas with a higher white population may achieve herd immunity much faster than areas with a higher Black population. 
+
+From both our agent-based model and logistic regression model, it is apparent that the current vaccination policy can be improved on in order to ensure equitable distribution. 
 
 
 ## What's next for 
